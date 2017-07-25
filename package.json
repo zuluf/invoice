@@ -1,0 +1,20 @@
+{
+  "name": "Invoice",
+  "version": "1.0.0",
+  "description": "Invoice structure",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/zuluf/invoice.git"
+  },
+  "author": {
+    "name": "Marko Lazarevic",
+    "email": "lazarevic.net@gmail.com"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "gulp": "^3.9.0",
+    "gulp-less": "3.0.3",
+    "gulp-minify-css": "1.2.1",
+    "gulp-rename": "1.2.2"
+  }
+}

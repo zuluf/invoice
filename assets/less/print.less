@@ -1,0 +1,172 @@
+@red : #CA1A1A;
+@gray : #373C37;
+@lightGray : #CFCFCF;
+@white : #FFFFFF;
+
+@page {
+	size: A4;
+	margin: 0;
+}
+
+@media all {
+	* {
+		.box-sizing(border-box);
+		font-family: "Helvetica", Calibri, sans-serif;
+		margin: 0;
+		padding: 0;
+		border: 0;
+		color: @gray;
+		font-weight: 500;
+	}
+
+	body {
+		background: @lightGray;
+	}
+
+	.page-wrap {
+		position: relative;
+		background: @white;
+		margin: 1mm auto;
+		width: 210mm;
+		min-height: 287mm;
+		padding: 5mm 15mm;
+		.box-shadow(1mm 1mm 1mm rgba(140, 140, 140, 0.9));
+
+		header {
+			padding-top: 5mm;
+
+			h1 {
+				border-bottom: 1px solid @red;
+				font-size: 1.5em;
+				padding: 1mm;
+				text-align: right;
+			}
+
+			h3 {
+				text-align: right;
+				font-size: 0.9em;
+				padding: 1mm;
+			}
+		}
+
+		main {
+			padding: 15mm 0 0;
+		}
+
+		.section {
+			padding: 0 1mm 10mm;
+
+			ul {
+				list-style: none;
+
+				li {
+					padding: 0.3mm;
+					font-size: 0.9em;
+					font-weight: 400;
+				}
+
+				li.title {
+					font-weight: 600;
+					font-size: 1em;
+				}
+
+				li.tabbed {
+					padding-left: 9mm;
+
+					strong {
+						font-size: 1em;
+					}
+				}
+
+				&.bill {
+					width: 100%;
+					padding-bottom:  45mm;
+					border-bottom: 1px solid @red;
+
+					li.title {
+						padding: 3mm 3mm 1mm;
+					}
+
+					li.offset {
+						margin-top: 5mm;
+					}
+				}
+			}
+
+			table {
+				border-collapse: collapse;
+				width: 100%;
+				text-align: left;
+
+				tfoot, thead {
+					th {
+						font-weight: 600;
+						background: #FBFBFB;
+					}
+				}
+
+				thead th:last-child {
+					font-weight: 100!important;
+				}
+
+				thead tr:nth-child(4) {
+					th:last-child {
+						font-weight: 600!important;
+					}
+				}
+
+				tr {
+					td, th {
+						border: 1px solid #DFDFDF;
+						padding: 3mm;
+						font-size: 0.9em;
+
+						&.right {
+							text-align: right;
+							font-weight: 500;
+						}
+					}
+				}
+
+				tfoot {
+					tr {
+						.no-border {
+							border: none;
+							background: transparent;
+						}
+
+						.right {
+							font-weight: 600;
+						}
+					}
+				}
+
+				tbody {
+					td {
+						font-weight: 100!important;
+					}
+				}
+			}
+
+			strong.default {
+				font-size: 1em;
+				font-weight: bold;
+			}
+		}
+
+		.signature {
+			position: absolute;
+			width: 30%;
+			right: 17mm;
+			bottom: 30mm;
+			border-bottom: 1px solid #DFDFDF;
+		}
+	}
+}
+
+@media print {
+	.page-wrap {
+		margin: 0 auto!important;
+		.box-shadow(none);
+	}
+}

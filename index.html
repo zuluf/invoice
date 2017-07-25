@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Invoice {INVOICE_NUMBER}</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="assets/dist/app.min.css" />
+	<link rel="icon" href="assets/images/favicon.ico">
+</head>
+<body>
+	<div class="page-wrap">
+		<header>
+			<h1>Invoice {INVOICE_NUMBER}</h1>
+			<h3>Date: {INVOICE_DATE}</h3>
+		</header>
+		<main>
+			<div class="section">
+				<ul>
+					<li class="title">
+						{COMPANY_SHORT_NAME}
+					</li>
+					<li>{COMPANY_LONG_NAME}</li>
+					<li>{COMPANY_ADDRESS}</li>
+					<li>Registration Number: {COMPANY_TAX_ID}</li>
+				</ul>
+			</div>
+			<div class="section">
+				<ul>
+					<li class="title">
+						CLIENT: {CLIENT_NAME}
+					</li>
+					<li>{CLIENT_ADDRESS},</li>
+					<li>{CLIENT_ADDRESS}</li>
+					<li>Registration Number: {CLIENT_TAX_ID}</li>
+				</ul>
+			</div>
+			<div class="section">
+				<table>
+					<thead>
+						<tr>
+							<th>Invoice Number</th>
+							<th class="right" colspan="3">{INVOICE_NUMBER}</th>
+						</tr>
+						<tr>
+							<th>Billing Period</th>
+							<th class="right" colspan="3">{INVOICE_START_DATE} - {INVOICE_END_DATE}</th>
+						</tr>
+						<tr>
+							<th>Date</th>
+							<th class="right" colspan="3">{INVOICE_DATE}</th>
+						</tr>
+						<tr>
+							<th>Description</th>
+							<th>Price ({CURRENCY})</th>
+							<th>Amount (Days)</th>
+							<th>Total ({CURRENCY})</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>{INVOICE_ITEM}</td>
+							<td class="right">{AMOUNT_PER_DAY} {CURRENCY}</td>
+							<td class="right">{WORKED_DAYS}</td>
+							<td class="right">{TOTAL_AMOUNT_PER_ITEM} {CURRENCY}</td>
+						</tr>
+					</tbody>
+					<tfoot>
+						<tr>
+							<th class="no-border"></th>
+							<th class="no-border"></th>
+							<th class="right">Total</th>
+							<th class="right">{TOTAL_AMOUNT} {CURRENCY}</th>
+						</tr>
+					</tfoot>
+				</table>
+			</div>
+			<div class="section">
+				<ul class="bill">
+					<li class="title">
+						Instruction for customer transfers ({CURRENCY})
+					</li>
+					<li class="tabbed">{COMPANY_BANK_NAME}</li>
+					<li class="tabbed">Bank Account Number: <strong class="default">{COMPANY_BANK_ACCOUNT_NUMBER}</strong></li>
+
+					<li class="title offset">Notes:</li>
+					<li class="tabbed">- {PAYMENT_INSTRUCTIONS}</li>
+					<li class="tabbed">- Invoice is valid without stamp and signiture</li>
+				</ul>
+			</div>
+			<div class="signature"></div>
+		</main>
+	</div>
+</body>
+</html>
